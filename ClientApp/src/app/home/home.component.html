@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2 col-12">
+      <div class="card">
+        <ul class="list-group">
+          <li class="list-group-item"
+              *ngFor="let plant of plants">
+            <div class="row">
+              <div class="col-md-12 col-12">
+                <div class="row">
+                  <div class="col-md-3 col-4 user-img text-center pt-1">
+                    <img class="img-responsive img-circle rounded-circle"
+                         [src]="plant.imageUrl" alt="{{ plant.name }}"  />
+                  </div>
+                  <div class="col-md-5 col-4 mid-sec">
+                    <h5 class="font-weight-bold mb-1">{{ plant.name }}</h5>
+                    <div class="user-detail">
+                      <p class="m-0"><i class="fa fa-phone mr-1" aria-hidden="true"></i>Location: {{ plant.location }}</p>
+                      <p class="m-0"><i class="fa fa-envelope mr-1" aria-hidden="true"></i>Last Watered: {{plant.lastWateredDateTime |  date:'MMM d, y, h:mm:ss a'}}</p>
+                      <div class="danger-msg" *ngIf="plant.wateringStatus == -1"><span>{{plant.msg}}</span></div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-4">
+                    <button type="button"
+                            class="btn btn-primary start-btn"
+                            *ngIf="plant.wateringStatus > 3 || plant.wateringStatus == -1"
+                            (click)="startwatering(plant.id)">
+                      Start Watering
+                    </button>
+                    <button type="button"
+                            class="btn btn-danger start-btn"
+                            *ngIf="plant.wateringStatus == 3"
+                            (click)="stopwatering(plant.id)">
+                      Stop Watering
+                    </button>
+                    <div class="action-msg"
+                         *ngIf="plant.wateringStatus == 0">
+                      <h5>{{plant.msg}}</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+body {
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+.list-group-item {
+  padding: 5px 20px;
+}
+
+.list-group-item:hover {
+  background: #f1f1f1;
+}
+
+.user-img img {
+  height: 90px;
+  width: 90px;
+}
+
+.card-header h4 {
+  display: inline-block;
+  padding: 12px 15px 8px 15px;
+}
+
+.card-header ul {
+  list-style: none;
+}
+
+.card-header ul li a {
+  font-size: 25px;
+  padding: 15px 10px 9px;
+  outline: none;
+}
+
+.search-div {
+  display: none;
+}
+
+.user-detail {
+  font-size: 14px;
+}
+
+.mid-sec {
+    padding-top: 8px;
+}
+
+.start-btn {
+  margin: 28px 0 0 28px;
+}
+
+.danger-msg {
+  color: red;
+}
+
+.action-msg {
+  margin-top: 18px;
+}
